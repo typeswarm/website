@@ -1,0 +1,10 @@
+main:
+    source: |
+        import { swarm } from '@typeswarm/core';
+
+        export default (args) => {
+          const redisService = swarm.Service('redis');
+
+          return swarm.Cluster('3.8')
+            .service('redisService');
+        }
